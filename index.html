@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
 <title>Renovancy — Linktree</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -83,18 +84,33 @@
     50%{ opacity:0.4; transform:scale(0.75); }
   }
 
-  /* Logo grande, sem moldura quadrada - é a wordmark inteira */
+  /* Logo grande, sem moldura quadrada - é a wordmark inteira.
+     Um brilho roxo mais claro atrás dela aumenta o contraste
+     sem criar um "cartão" visível. */
   .logo{
-    margin-top:30px;
+    margin-top:34px;
     width:100%;
-    max-width:300px;
+    max-width:380px;
     display:flex;
     justify-content:center;
+    position:relative;
+    padding:28px 20px;
+  }
+  .logo::before{
+    content:"";
+    position:absolute;
+    inset:-6px;
+    background:radial-gradient(ellipse 75% 70% at 50% 50%, rgba(216,180,254,0.32), rgba(168,85,247,0.16) 55%, transparent 78%);
+    filter:blur(4px);
+    z-index:0;
+    border-radius:28px;
   }
   .logo img{
     width:100%;
     height:auto;
     object-fit:contain;
+    position:relative;
+    z-index:1;
     filter:drop-shadow(0 6px 24px rgba(144, 101, 247, 0.35));
   }
 
@@ -191,7 +207,7 @@
   }
 
   @media (max-width:380px){
-    .logo{ max-width:230px; }
+    .logo{ max-width:280px; }
     .wrap{ padding:44px 16px 32px; }
   }
 </style>
