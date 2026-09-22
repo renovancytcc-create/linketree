@@ -90,16 +90,16 @@
   .logo{
     margin-top:34px;
     width:100%;
-    max-width:380px;
+    max-width:300px;
     display:flex;
     justify-content:center;
     position:relative;
-    padding:28px 20px;
+    padding:10px 8px;
   }
   .logo::before{
     content:"";
     position:absolute;
-    inset:-6px;
+    inset:2px;
     background:radial-gradient(ellipse 75% 70% at 50% 50%, rgba(216,180,254,0.32), rgba(168,85,247,0.16) 55%, transparent 78%);
     filter:blur(4px);
     z-index:0;
@@ -207,7 +207,7 @@
   }
 
   @media (max-width:380px){
-    .logo{ max-width:280px; }
+    .logo{ max-width:230px; }
     .wrap{ padding:44px 16px 32px; }
   }
 </style>
