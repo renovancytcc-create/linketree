@@ -3,34 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark light">
+<meta name="color-scheme" content="light">
 <title>Renovancy — Linktree</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-1:#0d0a1f;
-    --bg-2:#1a1233;
-    --violet:#a855f7;
+    --bg:#ffffff;
+    --violet:#6d12c4;
     --violet-deep:#5800aa;
-    --violet-light:#d8b4fe;
+    --violet-light:#8a3fd6;
     --blue:#5b8cff;
-    --surface:rgba(255,255,255,0.055);
-    --surface-hover:rgba(255,255,255,0.10);
-    --border:rgba(216,180,254,0.18);
-    --text:#f5f3ff;
-    --muted:#c3b6e8;
-    --glow:rgba(168,85,247,0.45);
+    --surface:rgba(88,0,170,0.05);
+    --surface-hover:rgba(88,0,170,0.10);
+    --border:rgba(88,0,170,0.22);
+    --text:#1c1030;
+    --muted:#5d4a7a;
+    --glow:rgba(88,0,170,0.25);
   }
 
   *{box-sizing:border-box; margin:0; padding:0;}
 
   html,body{
     min-height:100%;
-    background:
-      radial-gradient(700px 500px at 15% -5%, var(--glow), transparent 60%),
-      radial-gradient(600px 500px at 90% 15%, rgba(105, 2, 201, 0.35), transparent 55%),
-      linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    background:var(--bg);
     color:var(--text);
     font-family:'Inter', sans-serif;
     overflow-x:hidden;
@@ -40,8 +36,8 @@
   .circuit-bg{
     position:fixed; inset:0;
     background-image:
-      linear-gradient(rgba(27, 27, 27, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(19, 19, 19, 0.035) 1px, transparent 1px);
+      linear-gradient(rgba(88,0,170,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(88,0,170,0.06) 1px, transparent 1px);
     background-size: 42px 42px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 40%, transparent 90%);
     pointer-events:none;
@@ -84,9 +80,7 @@
     50%{ opacity:0.4; transform:scale(0.75); }
   }
 
-  /* Logo grande, sem moldura quadrada - é a wordmark inteira.
-     Um brilho roxo mais claro atrás dela aumenta o contraste
-     sem criar um "cartão" visível. */
+  /* Logo grande, sem moldura quadrada - é a wordmark inteira. */
   .logo{
     margin-top:34px;
     width:100%;
@@ -100,7 +94,7 @@
     content:"";
     position:absolute;
     inset:2px;
-    background:radial-gradient(ellipse 75% 70% at 50% 50%, rgba(216,180,254,0.32), rgba(168,85,247,0.16) 55%, transparent 78%);
+    background:radial-gradient(ellipse 75% 70% at 50% 50%, rgba(168,85,247,0.14), rgba(168,85,247,0.06) 55%, transparent 78%);
     filter:blur(4px);
     z-index:0;
     border-radius:28px;
@@ -111,7 +105,7 @@
     object-fit:contain;
     position:relative;
     z-index:1;
-    filter:drop-shadow(0 6px 24px rgba(144, 101, 247, 0.35));
+    filter:drop-shadow(0 6px 20px rgba(88,0,170,0.22));
   }
 
   .subtitle{
@@ -162,14 +156,14 @@
   .link-card::before{
     content:"";
     position:absolute; inset:0;
-    background:linear-gradient(120deg, rgba(176, 99, 248, 0.2), rgba(120, 1, 231, 0.16));
+    background:linear-gradient(120deg, rgba(88,0,170,0.08), rgba(88,0,170,0.04));
     opacity:0;
     transition:opacity 0.2s ease;
   }
   .link-card:hover, .link-card:focus-visible{
     transform:translateY(-2px);
     background:var(--surface-hover);
-    border-color:rgba(216,180,254,0.5);
+    border-color:rgba(88,0,170,0.5);
     outline:none;
   }
   .link-card:hover::before, .link-card:focus-visible::before{ opacity:1; }
@@ -190,7 +184,7 @@
   .link-desc{ font-size:12.5px; color:var(--muted); margin-top:2px; }
 
   .arrow{ position:relative; z-index:1; color:var(--muted); flex-shrink:0; transition:transform 0.18s ease; }
-  .link-card:hover .arrow{ transform:translateX(3px); color:var(--text); }
+  .link-card:hover .arrow{ transform:translateX(3px); color:var(--violet-deep); }
 
   footer{
     margin-top:44px;
